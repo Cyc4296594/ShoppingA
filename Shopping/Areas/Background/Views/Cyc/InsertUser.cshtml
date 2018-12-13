@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增用户</title>
+    <script src="~/Scripts/vue.js"></script>
+</head>
+<body>
+    <div id="max">
+        用户名:<input type="text" v-model.trim="username"/>
+        <br />
+        用户邮箱:<input type="text" />
+        <br />
+        手机号码:<input type="text" />
+        <br />
+        昵称:<input type="text" v-model.trim="nick"/>
+        <br />
+        密码:<input type="password" v-model="password"/>
+        <br />
+        确认密码:<input type="password" v-model="passwordReg"/>
+        <br />
+        用户等级:<select name="grade">
+            <option value="1">铜牌会员</option>
+            <option value="2">银牌会员</option>
+            <option value="3">金牌会员</option>
+        </select>
+        <br />
+        管理员组:<select name="grade">
+            <option value="1">非管理员</option>
+            <option value="2">管理员</option>
+        </select>
+        <br />
+        <button type="button" @@click="insert">提交</button>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#max",
+            data: {
+                username: "",
+                nick: "",
+                password: "",
+                passwordReg:""
+            }, methods: {
+                insert() {
+                    if (this.username == "") {
+                        alert("用户名不允许为空");
+                        return;
+                    } else if (this.password == "") {
+                        alert("密码不允许为空");
+                        return;
+                    } else if (this.password != this.passwordReg) {
+                        alert("两次密码不一致");
+                        return;
+                    } else if (this.nick == "") {
+                        alert("昵称不允许为空");
+                        return;
+                    }
+                    //新增用户
+                    alert("开始新增用户");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

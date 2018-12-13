@@ -1499,6 +1499,7 @@
     <Content Include="Content\font-awesome\scss\_variables.scss" />
     <Content Include="Areas\Background\Views\Wl\Index.cshtml" />
     <Content Include="Areas\Background\Views\Wl\add.cshtml" />
+    <Content Include="Scripts\vue.js" />
     <Content Include="电商前台\AmazeUI-2.4.2\assets\css\admin.css" />
     <Content Include="电商前台\AmazeUI-2.4.2\assets\css\amazeui.css" />
     <Content Include="电商前台\AmazeUI-2.4.2\assets\css\amazeui.flat.css" />
@@ -1849,6 +1850,7 @@
     <Content Include="电商后台\用户评论.html" />
     <Content Include="电商后台\系统设置.html" />
     <Content Include="电商后台\订单列表.html" />
+    <Content Include="Areas\Background\Views\Cyc\InsertUser.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1924,7 +1926,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Background\Models\" />
-    <Folder Include="Areas\Background\Views\Cyc\" />
     <Folder Include="Areas\Background\Views\Hh\" />
     <Folder Include="Areas\Background\Views\Hqx\" />
     <Folder Include="Areas\Background\Views\Shared\" />
