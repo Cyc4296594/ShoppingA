@@ -13,5 +13,21 @@ namespace Shopping.Controllers
         {
             return View();
         }
+        #region 个人信息
+        public ActionResult Information()
+        {
+            return View();
+        }
+        #endregion
+
+        #region 账号安全
+        /// <summary>
+        /// 账户安全
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Safety() {
+            return View();
+        }
+        #endregion
     }
 }

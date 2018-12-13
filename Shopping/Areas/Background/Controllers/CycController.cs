@@ -17,7 +17,16 @@ namespace Shopping.Areas.Background.Controllers
             return View();
         }
         #endregion
-
+        #region 我的积分
+        public ActionResult MyIntegral() {
+            return View();
+        }
+        #endregion
+        #region 优惠券
+        public ActionResult Discounts() {
+            return View();
+        }
+        #endregion
 
         // GET: Background/Cyc
         public ActionResult Index()

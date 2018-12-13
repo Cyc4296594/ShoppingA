@@ -2138,6 +2138,8 @@
     <Content Include="电商后台\系统设置.html" />
     <Content Include="电商后台\订单列表.html" />
     <Content Include="Areas\Background\Views\Cyc\InsertUser.cshtml" />
+    <Content Include="Areas\Background\Views\Cyc\MyIntegral.cshtml" />
+    <Content Include="Areas\Background\Views\Cyc\Discounts.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2242,6 +2244,8 @@
     <Content Include="Static_Full_Version汉化\locales\en.json" />
     <Content Include="Static_Full_Version汉化\locales\es.json" />
     <Content Include="Static_Full_Version汉化\pdf\example.pdf" />
+    <Content Include="Views\Cyc\Information.cshtml" />
+    <Content Include="Views\Cyc\Safety.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2262,7 +2266,6 @@
     <Folder Include="Handler\Wl\" />
     <Folder Include="Handler\Zza\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Cyc\" />
     <Folder Include="Views\Hh\" />
     <Folder Include="Views\Wl\" />
     <Folder Include="Views\Zza\" />
