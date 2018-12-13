@@ -3,11 +3,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>收货地址</title>
-    <link href="~/Content/admin.css" rel="stylesheet" />
-    <link href="~/Content/amazeui.css" rel="stylesheet" />
-    <link href="~/Content/personal.css" rel="stylesheet" />
-    <link href="~/Content/addstyle.css" rel="stylesheet" />
+    <title>个人中心</title>
+    <link href="~/Content/Hqx/admin.css" rel="stylesheet" />
+    <link href="~/Content/Hqx/amazeui.css" rel="stylesheet" />
+    <link href="~/Content/Hqx/personal.css" rel="stylesheet" />
+    <link href="~/Content/Hqx/addstyle.css" rel="stylesheet" />
+    <link href="~/Content/Hqx/colstyle.css" rel="stylesheet" />
     <script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/amazeui.js"></script>
 </head>
@@ -31,10 +32,10 @@
                             <div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
                         </div>
                         <div class="topMessage my-shangcheng">
-                            <div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+                            <div class="menu-hd MyShangcheng"><a href="/Hqx/Address" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
                         </div>
                         <div class="topMessage mini-cart">
-                            <div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+                            <div class="menu-hd"><a id="mc-menu-hd" href="/Hqx/ShopCart" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
                         </div>
                         <div class="topMessage favorite">
                             <div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
@@ -57,6 +58,7 @@
             </div>
         </article>
     </header>
+    @*标题导航栏*@
     <div class="nav-table">
         <div class="long-title"><span class="all-goods">全部分类</span></div>
         <div class="nav-cont">
@@ -74,84 +76,27 @@
         </div>
     </div>
     <b class="line"></b>
+
     <div class="center">
         <div class="col-main">
             <div class="main-wrap">
                 <div class="user-address">
-                    <!--标题 -->
-                    <div class="am-cf am-padding">
-                        <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">地址管理</strong> / <small>Address&nbsp;list</small></div>
-                    </div>
-                    <hr />
-                    <ul class="am-avg-sm-1 am-avg-md-3 am-thumbnails">
-                        <li class="user-addresslist defaultAddr">
-                            <span class="new-option-r"><i class="am-icon-check-circle"></i>默认地址</span>
-                            <p class="new-tit new-p-re">
-                                <span class="new-txt">小叮当</span>
-                                <span class="new-txt-rd2">159****1622</span>
-                            </p>
-                            <div class="new-mu_l2a new-p-re">
-                                <p class="new-mu_l2cw">
-                                    <span class="title">地址：</span>
-                                    <span class="province">湖北</span>省
-                                    <span class="city">武汉</span>市
-                                    <span class="dist">洪山</span>区
-                                    <span class="street">雄楚大道666号(中南财经政法大学)</span>
-                                </p>
-                            </div>
-                            <div class="new-addr-btn">
-                                <a href="#"><i class="am-icon-edit"></i>编辑</a>
-                                <span class="new-addr-bar">|</span>
-                                <a href="javascript:void(0);" onclick="delClick(this);"><i class="am-icon-trash"></i>删除</a>
-                            </div>
-                        </li>
-                        <li class="user-addresslist">
-                            <span class="new-option-r"><i class="am-icon-check-circle"></i>设为默认</span>
-                            <p class="new-tit new-p-re">
-                                <span class="new-txt">小叮当</span>
-                                <span class="new-txt-rd2">159****1622</span>
-                            </p>
-                            <div class="new-mu_l2a new-p-re">
-                                <p class="new-mu_l2cw">
-                                    <span class="title">地址：</span>
-                                    <span class="province">湖北</span>省
-                                    <span class="city">武汉</span>市
-                                    <span class="dist">洪山</span>区
-                                    <span class="street">雄楚大道666号(中南财经政法大学)</span>
-                                </p>
-                            </div>
-                            <div class="new-addr-btn">
-                                <a href="#"><i class="am-icon-edit"></i>编辑</a>
-                                <span class="new-addr-bar">|</span>
-                                <a href="javascript:void(0);" onclick="delClick(this);"><i class="am-icon-trash"></i>删除</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="clear"></div>
-                    <a class="new-abtn-type" data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0}">添加新地址</a>
-                    <!--新增地址子页面-->
-                    <div class="am-modal am-modal-no-btn" id="doc-modal-1">
-                        <div class="add-dress">
-                            <!--标题 -->
-                            <div class="am-cf am-padding">
-                                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">新增地址</strong> / <small>Add&nbsp;address</small></div>
-                            </div>
-                            <hr />
-                            @RenderBody()
-                        </div>
-                    </div>
+                    @*子页面位置*@
+                    @RenderBody()
                 </div>
-                <script type="text/javascript">$(document).ready(function() {
-							$(".new-option-r").click(function() {
-								$(this).parent('.user-addresslist').addClass("defaultAddr").siblings().removeClass("defaultAddr");
-							});
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $(".new-option-r").click(function () {
+                            $(this).parent('.user-addresslist').addClass("defaultAddr").siblings().removeClass("defaultAddr");
+                        });
 
-							var $ww = $(window).width();
-							if($ww>640) {
-								$("#doc-modal-1").removeClass("am-modal am-modal-no-btn")
-							}
+                        var $ww = $(window).width();
+                        if ($ww > 640) {
+                            $("#doc-modal-1").removeClass("am-modal am-modal-no-btn")
+                        }
 
-						})</script>
+                    })
+                </script>
                 <div class="clear"></div>
             </div>
             <!--底部-->
@@ -212,7 +157,7 @@
                 <li class="person">
                     <a href="#">我的小窝</a>
                     <ul>
-                        <li> <a href="collection.html">收藏</a></li>
+                        <li> <a href="/Hqx/Collection" onclick="active(this)">收藏</a></li>
                         <li> <a href="foot.html">足迹</a></li>
                         <li> <a href="comment.html">评价</a></li>
                         <li> <a href="news.html">消息</a></li>
@@ -221,5 +166,6 @@
             </ul>
         </aside>
     </div>
+
 </body>
 </html>
