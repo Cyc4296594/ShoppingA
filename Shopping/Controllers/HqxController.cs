@@ -19,5 +19,11 @@ namespace Shopping.Controllers
         {
             return View();
         }
+
+        //我的收藏
+        public ActionResult Collection()
+        {
+            return View();
+        }
     }
 }
