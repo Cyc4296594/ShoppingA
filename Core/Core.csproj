@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\UserinfoMap.cs" />
+    <Compile Include="Mapping\UserTypeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\IocDBContext.cs" />
@@ -56,9 +58,7 @@
     <Compile Include="UnitofWork\IUnitofWork.cs" />
     <Compile Include="UnitofWork\UnitofWork.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
