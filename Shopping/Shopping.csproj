@@ -106,12 +106,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\addstyle.css" />
-    <Content Include="Content\admin.css" />
-    <Content Include="Content\amazeui.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\colstyle.css" />
+    <Content Include="Content\Hqx\addstyle.css" />
+    <Content Include="Content\Hqx\admin.css" />
+    <Content Include="Content\Hqx\amazeui.css" />
+    <Content Include="Content\Hqx\bootstrap.css" />
+    <Content Include="Content\Hqx\bootstrap.min.css" />
+    <Content Include="Content\Hqx\cartstyle.css" />
+    <Content Include="Content\Hqx\colstyle.css" />
     <Content Include="Content\email_templates\action.html" />
     <Content Include="Content\email_templates\alert.html" />
     <Content Include="Content\email_templates\billing.html" />
@@ -120,6 +121,8 @@
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Hqx\demo.css" />
+    <Content Include="Content\Hqx\optstyle.css" />
     <Content Include="Content\images\-0-saturn_solar.jpg_220x220.jpg" />
     <Content Include="Content\images\0-item_pic.jpg_220x220.jpg" />
     <Content Include="Content\images\01.jpg" />
@@ -315,8 +318,8 @@
     <Content Include="Content\images\YXARdXxj5.png" />
     <Content Include="Content\images\zhifubao.jpg" />
     <Content Include="Content\images\图标.png" />
-    <Content Include="Content\personal.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Hqx\personal.css" />
+    <Content Include="Content\Hqx\Site.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -2111,6 +2114,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Hqx\Collection.cshtml" />
     <Content Include="Views\Shared\_UserCentered.cshtml" />
+    <Content Include="Views\Hqx\ShopCart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
