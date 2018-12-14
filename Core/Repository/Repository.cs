@@ -97,5 +97,10 @@ namespace Core.Repository
             }
             return query.ToList();
         }
+
+        public DbSet<T> GetDbSet
+        {
+            get { return this.dbSet; }
+        }
     }
 }

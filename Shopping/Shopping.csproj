@@ -316,9 +316,6 @@
     <Content Include="Scripts\amazeui.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\Background\_Shopping.cshtml" />
-    <Content Include="Areas\Background\Views\Wl\Index.cshtml" />
-    <Content Include="Areas\Background\Views\Wl\add.cshtml" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Static_Full_Version汉化\404.html" />
     <Content Include="Static_Full_Version汉化\500.html" />
@@ -2161,12 +2158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Background\BackgroundAreaRegistration.cs" />
-    <Compile Include="Areas\Background\Controllers\CycController.cs" />
-    <Compile Include="Areas\Background\Controllers\HhController.cs" />
-    <Compile Include="Areas\Background\Controllers\HqxController.cs" />
-    <Compile Include="Areas\Background\Controllers\WlController.cs" />
-    <Compile Include="Areas\Background\Controllers\ZzaController.cs" />
     <Compile Include="Areas\Manage\Controllers\CycController.cs" />
     <Compile Include="Areas\Manage\Controllers\HhController.cs" />
     <Compile Include="Areas\Manage\Controllers\HqxController.cs" />
@@ -2191,7 +2182,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Areas\Background\Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -2269,12 +2259,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Background\Models\" />
-    <Folder Include="Areas\Background\Views\Cyc\" />
-    <Folder Include="Areas\Background\Views\Hh\" />
-    <Folder Include="Areas\Background\Views\Hqx\" />
-    <Folder Include="Areas\Background\Views\Shared\" />
-    <Folder Include="Areas\Background\Views\Zza\" />
     <Folder Include="Areas\Manage\Models\" />
     <Folder Include="Areas\Manage\Views\Hh\" />
     <Folder Include="Areas\Manage\Views\Hqx\" />
@@ -2297,6 +2281,14 @@
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{43135a7e-910b-4b97-8f53-04f1ed365178}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IService\IService.csproj">
+      <Project>{9BEA0392-3DE3-4554-8F72-B1329DE1220D}</Project>
+      <Name>IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{805D9D77-970D-4E12-95F8-A1A3361036CA}</Project>
+      <Name>Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

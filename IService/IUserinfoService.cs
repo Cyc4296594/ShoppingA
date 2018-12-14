@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,6 @@ namespace IService
     /// </summary>
     public interface IUserinfoService
     {
-
+        decimal GetUserList(int grade, int admin, string username, string email, string phone,int index,int size);
     }
 }

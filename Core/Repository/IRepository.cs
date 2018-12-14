@@ -1,6 +1,7 @@
 ﻿using Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -38,5 +39,8 @@ namespace Core.Repository
         /// </summary>
         /// <returns></returns>
         IEnumerable<T> Get(Expression<Func<T,bool>> filter, string prop, Func<IQueryable<T>,IOrderedQueryable<T>> orderby);
+
+
+        DbSet<T> GetDbSet { get; }
     }
 }

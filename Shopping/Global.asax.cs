@@ -1,7 +1,9 @@
 ﻿using Core.Repository;
 using Core.UnitofWork;
+using IService;
 using Ninject;
 using Ninject.Web.Common.WebHost;
+using Service;
 using System.Data.Entity;
 using System.Reflection;
 using System.Web;
@@ -32,6 +34,7 @@ namespace Shopping
             kernel.Bind<DbContext>().To<IocDBContext>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
             kernel.Bind<IUnitofWork>().To<UnitofWork>();
+            kernel.Bind<IUserinfoService>().To<UserinfoService>();
             return kernel;
         }
     }
