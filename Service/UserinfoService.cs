@@ -40,11 +40,15 @@ namespace Service
 
             //等级
             if (grade != 0) {
-                //userDB = userDB.Where(x => x.UT_no == grade);
+                //查询所对应等级的用户类型是否存在
+                var userType = typeDB.Where(t => t.UT_rank == grade).FirstOrDefault();
+                if (userType != null)
+                    userDB = userDB.Where(x => x.UT_no == userType.UT_no);
             }
             //管理员分组
             if (admin != 0) {
-                //userDB = userDB.Where(x=>x.)
+                //查询该管理员分组是否存在
+                //var
             }
             //用户名
             if (!string.IsNullOrEmpty(username)) {
@@ -58,7 +62,7 @@ namespace Service
             if (!string.IsNullOrEmpty(phone)) {
             }
 
-            return "";
+            return default(decimal);
         }
     }
 }

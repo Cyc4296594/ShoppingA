@@ -1,0 +1,25 @@
+﻿@model int
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditRole</title>
+</head>
+<body>
+    <h2>@(Model==0?"添加":"修改")管理员组</h2>
+    名称：<input type="text" />
+    <div>商城内容：<input type="checkbox">导航菜单<input type="checkbox">商城帮助<input type="checkbox">友情链接</div>
+    <div>配送公司：<input type="checkbox">商城设置<input type="checkbox">禁止IP<input type="checkbox">筛选词<input type="checkbox">商城插件</div>
+    <div>辅助功能：<input type="checkbox">日志管理<input type="checkbox">报表统计<input type="checkbox">事件管理<input type="checkbox">数据库</div>
+    <div>用户管理：<input type="checkbox">用户列表<input type="checkbox">会员等级<input type="checkbox">管理员组</div>
+    <div>新闻广告：<input type="checkbox">新闻管理<input type="checkbox">广告管理</div>
+    <div>商城管理：<input type="checkbox">商品管理<input type="checkbox">促销活动<input type="checkbox">专题管理<input type="checkbox">优惠券<input type="checkbox">订单管理<input type="checkbox">商品评价<input type="checkbox">商品咨询</div>
+    <div>商城性质：<input type="checkbox">商品品牌<input type="checkbox">商品分类</div>
+    <button type="button">提交</button>
+</body>
+</html>
