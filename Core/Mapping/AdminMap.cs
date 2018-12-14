@@ -15,7 +15,6 @@ namespace Core.Mapping
             HasKey(x => x.A_uid);
             //管理员密码
             HasKey(x => x.A_pwd);
-
             //数据库表
             ToTable("Admin");
         }
