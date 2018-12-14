@@ -16,6 +16,7 @@ namespace Shopping.Controllers
         // GET: Cyc
         public ActionResult Index()
         {
+            string str = "github测试";
             return View();
         }
         #region 个人信息
