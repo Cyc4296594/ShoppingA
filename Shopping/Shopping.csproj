@@ -2137,9 +2137,9 @@
     <Content Include="电商后台\用户评论.html" />
     <Content Include="电商后台\系统设置.html" />
     <Content Include="电商后台\订单列表.html" />
-    <Content Include="Areas\Background\Views\Cyc\InsertUser.cshtml" />
-    <Content Include="Areas\Background\Views\Cyc\MyIntegral.cshtml" />
-    <Content Include="Areas\Background\Views\Cyc\Discounts.cshtml" />
+    <Content Include="Areas\Manage\Views\Cyc\InsertUser.cshtml" />
+    <Content Include="Areas\Manage\Views\Cyc\MyIntegral.cshtml" />
+    <Content Include="Areas\Manage\Views\Cyc\Discounts.cshtml" />
     <Content Include="Areas\Member\Views\web.config" />
     <Content Include="Areas\Manage\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -2270,12 +2270,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Background\Models\" />
+    <Folder Include="Areas\Background\Views\Cyc\" />
     <Folder Include="Areas\Background\Views\Hh\" />
     <Folder Include="Areas\Background\Views\Hqx\" />
     <Folder Include="Areas\Background\Views\Shared\" />
     <Folder Include="Areas\Background\Views\Zza\" />
     <Folder Include="Areas\Manage\Models\" />
-    <Folder Include="Areas\Manage\Views\Cyc\" />
     <Folder Include="Areas\Manage\Views\Hh\" />
     <Folder Include="Areas\Manage\Views\Hqx\" />
     <Folder Include="Areas\Manage\Views\Shared\" />

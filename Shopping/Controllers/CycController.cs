@@ -8,6 +8,11 @@ namespace Shopping.Controllers
 {
     public class CycController : Controller
     {
+        
+        public CycController() {
+
+        }
+
         // GET: Cyc
         public ActionResult Index()
         {
@@ -22,22 +27,19 @@ namespace Shopping.Controllers
 
         [HttpPost]
         public ActionResult Information(object obj) {
-            string to = Request["to"];
-            switch (to)
-            {
-                case "GetInformation":
-                    return GetInformation();
-            }
             return View();
         }
+
+        #region 获取个人信息
         /// <summary>
         /// 获取个人信息
         /// </summary>
         /// <param name="context"></param>
-        [HttpPost]
-        private ActionResult GetInformation()
+        public ActionResult GetInformation()
         {
+            
             //用户名
+
             //会员
             //昵称
             //真实姓名
@@ -48,6 +50,7 @@ namespace Shopping.Controllers
             //个人简介
             return Json("");
         }
+        #endregion
         #endregion
 
         #region 账号安全

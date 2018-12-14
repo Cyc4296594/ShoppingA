@@ -22,7 +22,7 @@
     <script src="~/Scripts/vue.js"></script>
 </head>
 <body>
-    <div>
+    <div id="max">
         <header>
             <article>
                 <div class="mt-logo">
@@ -310,17 +310,16 @@
         var vm = new Vue({
             el: "#max",
             data: {
-
+                username:"这是用户名"
             }, methods: {},
             created() {
                 //获取个人信息
                 $.ajax({
-                    url: "/Cyc/Information",
+                    url: "GetInformation",
                     type:"post",
-                    data: { to:"GetInformation"},
-                    dataType: "json",
-                    success:(reault)=>{
-
+                    dataType: "text",
+                    success: (reault) => {
+                        console.log(result);
                     }
                 })
             }
