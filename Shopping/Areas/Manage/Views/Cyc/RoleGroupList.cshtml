@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="max">
-        <button type="button" onclick="javascript:location.href='InsertUser'">添加</button>
+        <button type="button" onclick="javascript:location.href='EditRoleGroup'">添加</button>
         <table>
             <thead>
                 <tr>
@@ -25,8 +25,8 @@
             </thead>
             <tbody>
                 <tr v-for="(r,i) in roleList">
-                    <td>{{i+1}}</td>
-                    <td>{{r[0].R_name}}</td>
+                    <td>{{r.RG_no}}</td>
+                    <td>{{r.RG_name}}</td>
                     <td>编辑|删除</td>
                 </tr>
             </tbody>
@@ -39,12 +39,11 @@
                 roleList : []
             }, created() {
                 $.ajax({
-                    url: "GetRoles",
+                    url: "GetRoleGroups",
                     type: "post",
                     datatype: "json",
                     success: function (result) {
                         vm.roleList = result;
-                        console.log(result);
                     }
                 })
             }

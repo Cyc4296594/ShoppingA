@@ -50,11 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping\AdminMap.cs" />
+    <Compile Include="Mapping\RoleContactMap.cs" />
     <Compile Include="Mapping\RoleGroupMap.cs" />
     <Compile Include="Mapping\RoleMap.cs" />
     <Compile Include="Mapping\UserinfoMap.cs" />
     <Compile Include="Mapping\UserTypeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IocInit.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\IocDBContext.cs" />
     <Compile Include="Repository\IRepository.cs" />
