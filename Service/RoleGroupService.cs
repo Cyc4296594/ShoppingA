@@ -1,14 +1,14 @@
-﻿using Entities;
+﻿using IService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IService
+namespace Service
 {
-    public interface IRoleService
+    public class RoleGroupService:IRoleGroupService
     {
-        IEnumerable<Role> GetRoles();
+
     }
 }

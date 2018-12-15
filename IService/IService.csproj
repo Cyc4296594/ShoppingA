@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRoleGroupService.cs" />
     <Compile Include="IRoleService.cs" />
     <Compile Include="IUserinfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

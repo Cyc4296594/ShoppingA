@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping\AdminMap.cs" />
+    <Compile Include="Mapping\RoleGroupMap.cs" />
     <Compile Include="Mapping\RoleMap.cs" />
     <Compile Include="Mapping\UserinfoMap.cs" />
     <Compile Include="Mapping\UserTypeMap.cs" />

@@ -23,6 +23,8 @@ namespace Core.Repository
             modelBuilder.Configurations.Add(new UserinfoMap());
             //用户类型
             modelBuilder.Configurations.Add(new UserTypeMap());
+            //管理权限组
+            modelBuilder.Configurations.Add(new RoleMap());
         }
     }
 }

@@ -18,8 +18,6 @@ namespace Core.Mapping
             HasKey(x => x.R_no);
             //权限名
             Property(x => x.R_name).IsRequired();
-            //显示名
-            Property(x => x.R_display).IsRequired();
 
             //数据库表名
             ToTable("Role");

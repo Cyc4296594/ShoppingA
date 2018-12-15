@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entities;
+using IService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,13 @@ namespace Shopping.Areas.Manage.Controllers
 {
     public class CycController : Controller
     {
+        IRoleService roleService;
+        public CycController(IRoleService roleService)
+        {
+            this.roleService = roleService;
+        }
+
+
         #region 管理员权限
         /// <summary>
         /// 管理员权限列表
@@ -17,11 +26,21 @@ namespace Shopping.Areas.Manage.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 获取所有管理权限组
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetRoles()
+        {
+            return Json(roleService.GetRoles().GroupBy(x => x.R_display));
+        }
         /// <summary>
         /// 管理员组编辑
         /// </summary>
         /// <returns></returns>
-        public ActionResult EditRole() {
+        public ActionResult EditRole()
+        {
             //判断是新增还是修改
             object edit = Request["edit"];
             if (edit == null)

@@ -7,21 +7,17 @@ using System.Threading.Tasks;
 namespace Entities
 {
     /// <summary>
-    /// 管理员权限
+    /// 管理员权限组
     /// </summary>
-    public class Role
+    public class RoleGroup
     {
         /// <summary>
         /// 主键
         /// </summary>
-        public int R_no { get; set; }
+        public int RG_no { get; set; }
         /// <summary>
-        /// 权限名
+        /// 权限组组名
         /// </summary>
-        public string R_name { get; set; }
-        /// <summary>
-        /// 显示的名称
-        /// </summary>
-        //public string R_display { get; set; }
+        public string RG_name { get; set; }
     }
 }

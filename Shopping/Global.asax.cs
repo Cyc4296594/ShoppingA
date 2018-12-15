@@ -35,6 +35,7 @@ namespace Shopping
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
             kernel.Bind<IUnitofWork>().To<UnitofWork>();
             kernel.Bind<IUserinfoService>().To<UserinfoService>();
+            kernel.Bind<IRoleService>().To<RoleService>();
             return kernel;
         }
     }

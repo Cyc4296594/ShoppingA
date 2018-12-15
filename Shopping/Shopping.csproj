@@ -2284,6 +2284,10 @@
       <Project>{43135a7e-910b-4b97-8f53-04f1ed365178}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{F535072C-CEEF-499E-93FA-38FCF6F3104D}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IService\IService.csproj">
       <Project>{9BEA0392-3DE3-4554-8F72-B1329DE1220D}</Project>
       <Name>IService</Name>
