@@ -20,10 +20,14 @@ namespace Service
             contactRep = unit.Repository<RoleContact>();
         }
 
-
+        /// <summary>
+        /// 根据权限组编号查询所关联的所有权限id
+        /// </summary>
+        /// <param name="gid"></param>
+        /// <returns></returns>
         public IEnumerable<int> GetRidByGid(int gid)
         {
-            throw new NotImplementedException();
+            return contactRep.Get(x => x.RG_no == gid, "", null).Select(x=>x.R_no);
         }
     }
 }

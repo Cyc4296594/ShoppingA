@@ -19,6 +19,9 @@ namespace Core.Mapping
             HasKey(x => x.RG_no);
             //权限组名称
             Property(x => x.RG_name).IsRequired();
+            //数据库表名
+            ToTable("RoleGroup");
+
         }
     }
 }

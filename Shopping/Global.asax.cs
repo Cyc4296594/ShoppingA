@@ -37,6 +37,7 @@ namespace Shopping
             kernel.Bind<IUserinfoService>().To<UserinfoService>();
             kernel.Bind<IRoleService>().To<RoleService>();
             kernel.Bind<IRoleGroupService>().To<RoleGroupService>();
+            kernel.Bind<IRoleGroupService>().To<RoleGroupService>();
             return kernel;
         }
     }

@@ -14,13 +14,9 @@ namespace Service
     {
         IUnitofWork unit;
         IRepository<RoleGroup> RGroupRep;
-        IRepository<RoleContact> contactRep;
-        IRepository<Role> roleRep;
         public RoleGroupService(IUnitofWork unit) {
             this.unit = unit;
             RGroupRep = unit.Repository<RoleGroup>();
-            contactRep = unit.Repository<RoleContact>();
-            roleRep = unit.Repository<Role>();
         }
 
         /// <summary>
@@ -36,14 +32,12 @@ namespace Service
         /// </summary>
         /// <returns></returns>
         public decimal GetRoleInfo(int RGid) {
-            var roleDB = roleRep.Get();
-            var contactDB = contactRep.Get();
 
             //需要的数据
             //权限组对象
             var RGroup = RGroupRep.Get(x => x.RG_no == RGid, "", null).FirstOrDefault();
             //所关联的所有权限编号
-            IEnumerable<int> list =  contactRep.Get(x => x.RG_no == RGid, "", null).Select(x => x.RC_no);
+            IEnumerable<int> ridList = contactRep.Get(x => x.RG_no == RGid, "", null).Select(x => x.RC_no);
 
 
 
