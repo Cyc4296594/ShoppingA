@@ -2169,6 +2169,7 @@
     <Compile Include="Areas\Manage\Controllers\WlController.cs" />
     <Compile Include="Areas\Manage\Controllers\ZzaController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
+    <Compile Include="Areas\Manage\Models\RoleInfo.cs" />
     <Compile Include="Areas\Member\Controllers\CycController.cs" />
     <Compile Include="Areas\Member\Controllers\HhController.cs" />
     <Compile Include="Areas\Member\Controllers\HqxController.cs" />
@@ -2264,7 +2265,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Manage\Models\" />
     <Folder Include="Areas\Manage\Views\Hh\" />
     <Folder Include="Areas\Manage\Views\Hqx\" />
     <Folder Include="Areas\Manage\Views\Shared\" />
