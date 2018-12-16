@@ -61,20 +61,9 @@ namespace Shopping.Areas.Manage.Controllers
         }
         #endregion
 
-        #region 获取指定权限组及其所拥有的权限
-        public ActionResult GetRoleInfo() {
-            //获取权限组的编号
-            int RGid = Convert.ToInt32(Request["RGid"]);
-            //获取指定权限组
-            RoleGroup RGroup = RGroupService.GetRoleGroup(RGid);
-            //获取指定权限组下的所有权限
-            IEnumerable<int> roleList = contactService.GetRidByGid(RGid);
-            return Json(new { RGroup = RGroup,roleList = roleList });
-        }
-        #endregion
 
 
-
+        #region 管理权限组增删改
         #region 新增管理权限组
         /// <summary>
         /// 新增管理权限组
@@ -106,10 +95,29 @@ namespace Shopping.Areas.Manage.Controllers
             return Content(i.ToString());
         }
         #endregion
+        #region 删除管理权限组
+        public ActionResult DeleteRoleGroups() {
+            int gid = Convert.ToInt32(Request["RGid"]);
+            int result = RGroupService.DeleteGroupByGid(gid);
+            return Content(result.ToString());
+        }
+        #endregion
+        #region 获取指定权限组及其所拥有的权限
+        public ActionResult GetRoleInfo()
+        {
+            //获取权限组的编号
+            int RGid = Convert.ToInt32(Request["RGid"]);
+            //获取指定权限组
+            RoleGroup RGroup = RGroupService.GetRoleGroup(RGid);
+            //获取指定权限组下的所有权限
+            IEnumerable<int> roleList = contactService.GetRidByGid(RGid);
+            return Json(new { RGroup = RGroup, roleList = roleList });
+        }
+        #endregion
+        #endregion
 
 
-
-        #region 获取所有管理权限组
+        #region 获取所有管理权限
         /// <summary>
         /// 获取所有管理权限组
         /// </summary>
@@ -120,6 +128,9 @@ namespace Shopping.Areas.Manage.Controllers
         }
         #endregion
         #endregion
+
+
+        
 
 
         #region 新增用户

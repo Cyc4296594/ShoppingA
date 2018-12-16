@@ -85,5 +85,21 @@ namespace Service
                 return 0;
             }
         }
+        /// <summary>
+        /// 删除权限组
+        /// </summary>
+        /// <param name="gid"></param>
+        /// <returns></returns>
+        public int DeleteGroupByGid(int gid)
+        {
+            try
+            {
+                RGroupRep.GetDbSet.Where(x => x.RG_no == gid).Delete();
+                return 1;
+            }
+            catch (Exception) {
+                return 0;
+            }
+        }
     }
 }

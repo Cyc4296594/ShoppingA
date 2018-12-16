@@ -34,5 +34,11 @@ namespace IService
         /// <param name="roles"></param>
         /// <returns></returns>
         int UpdateRoleGroup(int RGid,string name,List<int> roles);
+        /// <summary>
+        /// 删除权限组信息
+        /// </summary>
+        /// <param name="gid"></param>
+        /// <returns></returns>
+        int DeleteGroupByGid(int gid);
     }
 }
