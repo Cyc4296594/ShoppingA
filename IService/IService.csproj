@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRoleContactService.cs" />
+    <Compile Include="IRoleContact.cs" />
     <Compile Include="IRoleGroupService.cs" />
     <Compile Include="IRoleService.cs" />
     <Compile Include="IUserinfoService.cs" />

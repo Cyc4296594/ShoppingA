@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IService
 {
-    public interface IRoleContactService
+    public interface IRoleContact
     {
         /// <summary>
         /// 根据权限组编号获取其关联的所有权限id
