@@ -34,29 +34,16 @@
         var vm = new Vue({
             el: "#max",
             data: {
-                roleList: []
+                roleList:[]
             }, created() {
                 $.ajax({
                     url: "GetRoles",
                     type: "post",
                     dataType: "json",
-                    success:(result)=> {
+                    success: function (result) {
                         vm.roleList = result;
                     }
                 });
-                //要是不是新增用户
-                if (~~'@Model' != 0) {
-                    //获取其内的值及其对应权限组
-                    $.ajax({
-                        url: "GetRoleInfo",
-                        type: "post",
-                        data: {rid:~~'@Model'},
-                        dataType: "json",
-                        success: (result) => {
-                            console.log(result);
-                        }
-                    })
-                }
             }
         });
         function submit() {
@@ -65,19 +52,17 @@
                 rid.push($(v).val());
             })
             if (~~'@Model' == 0) {
-                //新增
+                alert("afsdafsd");
                 $.ajax({
                     url: "InsertRoleGroup",
                     type: "post",
                     data: { name: $("#text").val(), roles: JSON.stringify(rid) },
                     dataType: "text",
-                    success: (result)=> {
+                    success: function (result) {
                         alert(result);
                     }
                 })
             } else {
-                //编辑
-                
             }
         }
     </script>

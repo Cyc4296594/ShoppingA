@@ -22,6 +22,19 @@ namespace Shopping.Areas.Manage.Controllers
 
         #region 管理员权限
 
+        #region 获取所有权限
+        /// <summary>
+        /// 获取所有权限
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetRoles() {
+            return Json(roleService.GetRoles());
+        }
+        #endregion
+
+
+
+
         /// <summary>
         /// 管理员权限列表
         /// </summary>
@@ -46,32 +59,6 @@ namespace Shopping.Areas.Manage.Controllers
                 //不存在则返回回去
                 return View(Convert.ToInt32(edit));
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        #region 获取所有权限
-        /// <summary>
-        /// 获取所有权限
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult GetRoles() {
-            return Json(roleService.GetRoles());
-        }
-        #endregion
-
-
-
-
         #region 新增管理权限组
         /// <summary>
         /// 新增管理权限组
