@@ -12,6 +12,6 @@ namespace IService
     /// </summary>
     public interface IUserinfoService
     {
-        decimal GetUserList(int grade, int admin, string username, string email, string phone,int index,int size);
+        IEnumerable<Userinfo> GetUsers(int grade, int roleGroup, string username, string email, string phone,int index,int size);
     }
 }

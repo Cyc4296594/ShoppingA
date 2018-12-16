@@ -14,8 +14,10 @@ namespace Shopping.Areas.Manage.Controllers
         IRoleService roleService;
         IRoleGroupService RGroupService;
         IRoleContactService contactService;
-        public CycController(IRoleService roleService, IRoleGroupService RGroupService,IRoleContactService contactService)
+        IUserinfoService userService;
+        public CycController(IUserinfoService userService,IRoleService roleService, IRoleGroupService RGroupService,IRoleContactService contactService)
         {
+            this.userService = userService;
             this.roleService = roleService;
             this.RGroupService = RGroupService;
             this.contactService = contactService;
@@ -141,7 +143,7 @@ namespace Shopping.Areas.Manage.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult UserList() {
-
+            ViewData["Userinfos"] = JsonConvert.SerializeObject(userService.GetUsers(0,0,null,null,null,1,10));
             return View();
         }
 
@@ -151,6 +153,10 @@ namespace Shopping.Areas.Manage.Controllers
         /// <returns></returns>
         public ActionResult InsertUser()
         {
+            //管理员组
+            var RGroups = RGroupService.GetRoleGroups().ToList();
+            RGroups.Add(new RoleGroup() { RG_no = 0, RG_name = "非管理员" });
+            ViewData["infos"] = JsonConvert.SerializeObject(new { RGroups = RGroups });
             return View();
         }
         #endregion

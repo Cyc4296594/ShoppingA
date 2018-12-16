@@ -22,11 +22,11 @@ namespace Core.Mapping
             //密码
             Property(x => x.U_password).IsRequired();
             //是否是管理员
-            Property(x => x.U_admin);
+            Property(x => x.U_admin).IsRequired();
             //昵称
             Property(x => x.U_nick);
             //支付积分
-            Property(x => x.U_ji);
+            Property(x => x.U_ji).IsRequired();
             //用户头像
             Property(x => x.U_img);
             //用户手机号
@@ -34,15 +34,17 @@ namespace Core.Mapping
             //用户邮箱
             Property(x => x.U_email);
             //注册时间
-            Property(x => x.U_regtime);
+            Property(x => x.U_regtime).IsRequired();
             //最后一次登陆时间
-            Property(x => x.U_logintime);
+            Property(x => x.U_logintime).IsRequired();
             //用户类型编号(外键)
             Property(x => x.UT_no).IsRequired();
             //默认地址(外键)
             Property(x => x.UA_no).IsRequired();
             //地区(外键)
             Property(x => x.C_no);
+            //权限组编号(外键)
+            Property(x => x.RG_no);
             
             //表名
             ToTable("Userinfo");

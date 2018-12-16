@@ -2144,6 +2144,7 @@
     <Content Include="Areas\Manage\Views\web.config" />
     <Content Include="Areas\Manage\Views\Cyc\RoleGroupList.cshtml" />
     <Content Include="Areas\Manage\Views\Cyc\EditRoleGroup.cshtml" />
+    <Content Include="Areas\Manage\Views\Cyc\UserList.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

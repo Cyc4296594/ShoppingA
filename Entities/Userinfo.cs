@@ -60,12 +60,16 @@ namespace Entities
         /// </summary>
         public int UT_no { get; set; }
         /// <summary>
-        /// 默认地址
+        /// 默认地址(外键)
         /// </summary>
         public int UA_no { get; set; }
         /// <summary>
-        /// 地区
+        /// 地区(外键)
         /// </summary>
         public int C_no { get; set; }
+        /// <summary>
+        /// 权限组编号(外键)
+        /// </summary>
+        public int RG_no { get; set; }
     }
 }

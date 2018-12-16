@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserList</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/vue.js"></script>
+
+</head>
+<body>
+    <div id="max">
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>用户名</th>
+                    <th>邮箱手机</th>
+                    <th>昵称</th>
+                    <th>支付积分</th>
+                    <th>权限</th>
+                    <th>注册访问</th>
+                    <th>管理操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="user in users">
+                    <td>{{user.U_no}}</td>
+                    <td>{{user.U_username}}</td>
+                    <td>{{user.U_no}}</td>
+                    <td>{{user.U_nick}}</td>
+                    <td>{{user.U_ji}}</td>
+                    <td>{{user.RG_no}}</td>
+                    <td>{{user.U_regtime | formDate}}<br />{{user.U_logintime | formDate}}</td>
+                    <td><a href="javascript:" @@click="edit(user.U_no)">编辑</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        Vue.filter("formDate", (oldDate) => {
+            var date = new Date(oldDate);
+            var y = date.getFullYear();
+            var m = (date.getMonth() + 1);
+            var d = date.getDate();
+            var h = date.getHours();
+            var mm = date.getMinutes();
+            return `${y}/${m}/${d} ${h}:${mm}`;
+        })
+        var vm = new Vue({
+            el: "#max",
+            data: {
+                users:JSON.parse('@Html.Raw(ViewData["Userinfos"])')
+            }, methods: {
+                edit(uid) {
+
+                }
+            }
+        });
+    </script>
+</body>
+</html>
