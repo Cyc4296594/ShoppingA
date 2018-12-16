@@ -23,9 +23,10 @@ namespace Shopping.Areas.Manage.Controllers
 
 
 
-
         #region 管理员权限
 
+
+        #region 视图
         /// <summary>
         /// 管理员权限列表
         /// </summary>
@@ -50,6 +51,7 @@ namespace Shopping.Areas.Manage.Controllers
                 //不存在则返回回去
                 return View(Convert.ToInt32(edit));
         }
+        #endregion
 
         #region 获取所有权限
         /// <summary>
@@ -130,10 +132,19 @@ namespace Shopping.Areas.Manage.Controllers
         #endregion
 
 
-        
+        #region 用户管理
 
 
-        #region 新增用户
+        #region 视图
+        /// <summary>
+        /// 用户列表
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UserList() {
+
+            return View();
+        }
+
         /// <summary>
         /// 新增用户
         /// </summary>
@@ -142,6 +153,8 @@ namespace Shopping.Areas.Manage.Controllers
         {
             return View();
         }
+        #endregion
+
         #endregion
 
 
