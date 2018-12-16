@@ -1,6 +1,7 @@
 ﻿using Core.Repository;
 using Core.UnitofWork;
 using Entities;
+using EntityFramework.Extensions;
 using IService;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,11 @@ namespace Service
     {
         IUnitofWork unit;
         IRepository<RoleGroup> RGroupRep;
+        IRepository<RoleContact> contactRep;
         public RoleGroupService(IUnitofWork unit) {
             this.unit = unit;
             RGroupRep = unit.Repository<RoleGroup>();
+            contactRep = unit.Repository<RoleContact>();
         }
 
         /// <summary>
@@ -28,26 +31,11 @@ namespace Service
             return RGroupRep.Get();
         }
         /// <summary>
-        /// 查询权限组对应的权限信息
+        /// 根据权限组id查询权限组
         /// </summary>
         /// <returns></returns>
-        public decimal GetRoleInfo(int RGid) {
-
-            //需要的数据
-            //权限组对象
-            var RGroup = RGroupRep.Get(x => x.RG_no == RGid, "", null).FirstOrDefault();
-            //所关联的所有权限编号
-            IEnumerable<int> ridList = contactRep.Get(x => x.RG_no == RGid, "", null).Select(x => x.RC_no);
-
-
-
-
-            //var obj = contactDB    .Join(roleDB, x => x.RG_no, y => y.R_no,(x, y) => new {
-            //    x.RC_no,
-            //    x.RG_no,
-            //    x.R_no
-            //}).Join(RGroupDB,x=>x.RG_no,y=>y.);
-            return default(decimal);
+        public RoleGroup GetRoleGroup(int RGid) {
+            return RGroupRep.Get(x => x.RG_no == RGid,"",null).FirstOrDefault();
         }
         /// <summary>
         /// 新增管理员组
@@ -67,6 +55,35 @@ namespace Service
                 contactRep.Insert(new RoleContact() { RG_no = RGid, R_no = rid });
             }
             return unit.Commit();
+        }
+        /// <summary>
+        /// 修改权限组信息
+        /// </summary>
+        /// <param name="RGid"></param>
+        /// <param name="name"></param>
+        /// <param name="roles"></param>
+        /// <returns></returns>
+        public int UpdateRoleGroup(int RGid, string name, List<int> roles)
+        {
+            try
+            {
+                //修改权限组信息
+                RGroupRep.GetDbSet.Where(x => x.RG_no == RGid).Update(x => new RoleGroup()
+                {
+                    RG_name = name
+                });
+                //修改权限组的关联权限
+                contactRep.GetDbSet.Where(x => x.RG_no == RGid).Delete();
+                foreach (var rid in roles)
+                {
+                    contactRep.Insert(new RoleContact() { RG_no = RGid, R_no = rid });
+                }
+                unit.Commit();
+                return 1;
+            }
+            catch (Exception) {
+                return 0;
+            }
         }
     }
 }

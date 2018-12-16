@@ -13,11 +13,15 @@ namespace Shopping.Areas.Manage.Controllers
     {
         IRoleService roleService;
         IRoleGroupService RGroupService;
-        public CycController(IRoleService roleService,IRoleGroupService RGroupService)
+        IRoleContactService contactService;
+        public CycController(IRoleService roleService, IRoleGroupService RGroupService,IRoleContactService contactService)
         {
             this.roleService = roleService;
             this.RGroupService = RGroupService;
+            this.contactService = contactService;
         }
+
+
 
 
         #region 管理员权限
@@ -47,18 +51,6 @@ namespace Shopping.Areas.Manage.Controllers
                 return View(Convert.ToInt32(edit));
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
         #region 获取所有权限
         /// <summary>
         /// 获取所有权限
@@ -69,6 +61,16 @@ namespace Shopping.Areas.Manage.Controllers
         }
         #endregion
 
+        #region 获取指定权限组及其所拥有的权限
+        public ActionResult GetRoleInfo() {
+            int RGid = Convert.ToInt32(Request["RGid"]);
+            //获取指定权限组
+            RoleGroup RGroup = RGroupService.GetRoleGroup(RGid);
+            //获取指定权限组下的所有权限
+            IEnumerable<int> roleList = contactService.GetRidByGid(RGid);
+            return Json(new { RGroup = RGroup,roleList = roleList });
+        }
+        #endregion
 
 
 
@@ -89,6 +91,23 @@ namespace Shopping.Areas.Manage.Controllers
             return Content("0");
         }
         #endregion
+        #region 修改管理权限组
+        public ActionResult UpdateRoleGroup() {
+
+            //获取要修改的权限组编号
+            int RGid = Convert.ToInt32(Request["RGid"]);
+            //获取权限组名
+            string name = Request["name"];
+            //获取权限组所拥有的权限编号
+            List<int> roles = JsonConvert.DeserializeObject<List<int>>(Request["roles"]);
+
+            int i = RGroupService.UpdateRoleGroup(RGid,name,roles);
+            return Content(i.ToString());
+        }
+        #endregion
+
+
+
         #region 获取所有管理权限组
         /// <summary>
         /// 获取所有管理权限组
