@@ -63,6 +63,7 @@ namespace Shopping.Areas.Manage.Controllers
 
         #region 获取指定权限组及其所拥有的权限
         public ActionResult GetRoleInfo() {
+            //获取权限组的编号
             int RGid = Convert.ToInt32(Request["RGid"]);
             //获取指定权限组
             RoleGroup RGroup = RGroupService.GetRoleGroup(RGid);
